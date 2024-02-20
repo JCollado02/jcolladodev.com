@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Temperature & Humidity Thermometer</title>
+
+    <!-- linking font file-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- linking css file -->
+    <link rel="stylesheet" href="projectStyle.css">
+    <link rel="stylesheet" href="buttons.css">
+        <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <style>
+        h1 {
+            margin-top: 50px; /* Increase the margin top of the h1 tag */
+            margin-bottom: 20px; /* Increase the margin bottom of the h1 tag */
+        }
+      </style>
+
+    <!-- Navigation bar container -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarScroll navbarDark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Jim Collado</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Project Description section -->
+    <div class="custom_container">
+        <h1>Pi Temperature & Humidity Thermometer</h1>
+        <img src="images/portfolioImage3.png" alt="Image of the thermometer I created for my Pi's Temperature & Humidity Sensor" style="max-width: 800px;">
+
+        <h1>What We Did</h1>
+        <p> 
+            &emsp; This project marked one of the initial assignments in my IoT course at BW and served as an excellent introduction to working with a Raspberry Pi. In this project, my responsibility was to develop a web dashboard that would present real-time temperature and humidity data that would be read from a 
+            temperature and humidity sensor connected to a Raspberry Pi. Additionally, I incorporated a servo mechanism to create a physical thermometer that visually displayed the current temperature. To enhance the user experience, I integrated a buzzer that emitted a sound every 10 seconds to signal the retrieval of a new reading. Throughout the project, 
+            I drew inspiration from various examples and concepts covered in class, and had used my personal 3D printer to create the thermometer component.
+        </p>
+        
+        <!--Development Process section-->
+        <h1>Creating the Temp & Humidity Sensor</h1>
+        <p> 
+            &emsp; One of the main points of this project was for us to demonstrate our ability to work with program the sensors on our Raspberry Pi to provide current information on the temperature and humidity of the room the Pi was in. As with all other projects done in this class, this was assigned to us as a way of building up to our final project, which would need to encompass everything we did throughout the course.
+            This project would then be used in a future project where we were tasked with creating a web dashboard which could control servos and lights as well as display information read from the sensors. Inspiration from my web dashboard can be seen in many of the other web pages I have created, such as this online portfolio. For this project in particular, I took a temperature and humidity sensor and connected it to my Raspberry Pi. 
+            On my pi, I wrote a program in Python which would loop forever and read the temperature of the room every ten seconds. Whenever it got a reading, it would rotate the connect servo the appropriate distance so that it would point to the current temperature and would send a signal to the buzzer to play a tone for about a second. All-in-all, this was a simple and easy project, but served as a great starting point for what was to come
+            and also gave me a good excuse to use my 3D printer.
+        </p>
+
+        <h1>Conclusion</h1>
+        <p>
+            While this may have been one of the smaller projects I had, it still proved to be a very useful experience as it would later help me when working on future projects such as the <a href="SmartMail.html">Smart Mailbox</a> I created with a classmate for our final project. I believe that this served as a great introduction to working with a Raspberry Pi and creating small devices capable of giving a user information. I certainly think I will have
+            more projects like this in the future to further explore what I can create using a Raspberry Pi.
+        </p>
+        
+        <!--Database Explaination section-->
+        
+        <div class="container" style="padding-bottom: 60px">
+            <div class="row">
+                <div class="col text-center">
+                    <a href="index.html#portfolio" class="btn btn-primary">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer section -->
+        <footer id="footer">
+            <div class="text-center">
+                <div class="to-top">
+                    <a class="btn btn-custom" href="#top"><i class="fas fa-angle-up"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

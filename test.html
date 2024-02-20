@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Four AI</title>
+
+    <!-- linking font file-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- linking css file -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="buttons.css">
+    <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <style>    
+        h1 {
+            margin-top: 50px; /* Increase the margin top of the h1 tag */
+            margin-bottom: 20px; /* Increase the margin bottom of the h1 tag */
+        }
+    </style>
+
+    <!-- Navigation bar container -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarScroll navbarDark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Jim Collado</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+    <!--Project Description section-->
+    <div class="custom_container">
+        <h1>Connect 4 AI</h1>
+        <img src="images/portfolioImage1.png" alt="Project thumbnail image of two robots playing a board game">
+
+        <h1>What We Did</h1>
+        <p> 
+            &emsp;For my Intelligent Systems class, I had worked alongside two other students to implement an artificial intelligence player for the game Connect 4. This was done within Python using the Minimax algorithm that we had learned in class. In addition to this,
+            we also had attempted to improve the speed and performance of our algorithm using optimizations such as alpha-beta pruning. A short reminder of how the game works, the game is played on a seven-column, six-row grid, and the objective is to connect four discs of the same color in a line. Connect 4
+            is an interesting game to create an agent like this because it is a solved game, meaning that there is a series of moves that a player could make, that would always guarentee a win. So, in order to create an agent capable of perfect play, we just need an agent that can observe the game several moves ahead
+            and decide on what move to make during it's turn based on what it finds. The way that our AI player works is that it recursively evaluates possible moves and their consequences using an evaluation function that assigns scores to game states based on various features. The algorithm also
+            includes heuristics and optimization techniques to improve its efficiency. The results demonstrated that the AI player outperforms other strategies and can play at a high level, even against human players. This project showcases the application of AI algorithms in game development, providing a practical example
+            of implementing the Minimax algorithm with alpha-beta pruning in Python. For more information about Connect 4, you can visit this <a href="https://en.wikipedia.org/wiki/Connect_Four">wikipedia article</a>.
+        </p>
+        
+        <!--Development Process section-->
+        <h1>Our Implementation</h1>
+        <img src="images/Ai Code Snippet.png" alt="Snippet of our implementation" title="Minimax Algorithm used within our Connect 4 Project">
+        <p> 
+            &emsp;For the most part, the creation of the game was simple thanks to the <a href="https://www.pygame.org">pygames library</a> and the several guides provided on their website. We had initially started by creating the game so that a human player could play against another human. Once we had that working, we moved to changing it 
+            so that we could begin working on our intelligent agent. At first, the agent would simply choose moves at random, placing pieces in a random column, without any consideration of whether the move was good or bad. The goal here was to make it so that it was capable of interacting with the game. This step was yet another simple,
+            but was necessary in order to make it so that our game did not require a second human player. Then, the next step in our project was to incorporate the <a href="https://en.wikipedia.org/wiki/Minimax">Minimax Algorithm</a>, a widely used technique in game theory, to enhance our AI player's decision-making process. The Minimax Algorithm, 
+            is a recursive algorithm that evaluates possible moves in a game by considering the opponent's best possible move and choosing the move that minimizes the maximum possible loss. With the help of some pseudocode provided within our course and utilizing additional resources, we gained a good understanding of the algorithm. In order for our the 
+            Minimax Algorithm to work however, we needed to figure out how to create our evaluation function, which was a necessary part of the algorithm and the next step in our project.
+        </p>
+
+        <!--Evaluation Function and Alpha-Beta Explaination section-->
+        <h1>Evaluation Function</h1>
+        <p>
+            &emsp;Another important aspect of our Connect 4 AI was the design of the evaluation function. The evaluation function assigns a numerical value to each game state to estimate its desirability. We considered various factors such as the number of connected pieces, potential winning moves, and defensive strategies. By carefully designing the evaluation function, 
+            we were able to guide the AI towards making optimal moves. For this project in particular, we mainly focused on the number of pieces on the board that were place in a row horizontally, vertically, or diagonally. We also had our evaluation function value moves that would block the opponent from winning more than moves that wouldn't cause a win for the agent.
+            We really wanted to strike a balance between playing defensively and making moves that would increase the amount of pieces the agent had in a row.
+        </p>
+        <p> 
+            &emsp;Now while our implementation of the Minimax Algorithm was successful and were able to create an intelligent agent that could play the game, our agent was incapable of really achieving "perfect play". At least, it was unable to do this within a reasonable amount of time. See, the Minimax Algorithm relies on an established "depth", which says
+            how many moves ahead it should look. The way the agent plays and the way this algorithm works is that a tree is created, with the current state set as the root. From there, each child of that root node is a possible move that can occur. Then in each of the nodes, another move is simulated and children are created for those nodes. This happens over and over and
+            our depth tells the agent how far into the tree it can search. As you can imagine, the amount of moves that the agent has to observe gets exponentially larger the further down the tree it has to go, which causes the algorithm to take significantly longer. If given a large enough depth and with a good enough evaluation function, our agent would be capable of playing perfectly,
+            but unfortunately, without a lot of optimizations and perhaps a change in the programming language used, this would take an unrealistic amount of time. In order to combat this without resorting to changing our chosen programming language, we modified our Minimax Algorithm to make use of an optimization technique called <a href="https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-4-alpha-beta-pruning/#">Alpha-Beta Pruning</a>.
+        </p>
+
+        <h1>Alpha-Beta Pruning</h1>
+        <p> To further improve the performance of our Connect 4 AI, we implemented the alpha-beta pruning technique. Alpha-beta pruning is a search algorithm optimization that reduces the number of nodes evaluated by the minimax algorithm. It works by eliminating branches of the search tree that are guaranteed to be worse than previously evaluated branches. This optimization significantly reduced the number of game states that needed to be evaluated, 
+          allowing our AI to search deeper into the game tree within a reasonable time frame. Implementing the optimization was actually relatively quick, thanks to the help of a combination of resources and some of the information provided to us during lectures in our Intelligent Systems class. Our Minimax Algorithm stayed mostly the same code-wise, with the only difference being that we introduce two new parameters and chose our next move based on these parameters. While
+          this optimization did allow our algorithm to make use of higher depths at a quicker speed, we only really managed to make use of a depth of around 8 without having the agent take a long time to make a move. At this time we still had some time to work on our project so we decided to attempt to introduce one more optimization technique. This time, we wanted to try using bitboards.
+        </p>
+
+        <!--Bitboard Explaination section-->
+        <h1>Bitboards</h1>
+        <img src="images/Bitboard Representation.png" alt="Visualization of the Connect 4 board using the Bitboard Method" title="Visualization of the Connect 4 board using the Bitboard Method">
+        <p> 
+            &emsp; Given that we were able to get the algorithm working with a few weeks before the due date of the project, we decided to try to look into some of the things we could do to increase the depth that our agent was capable of using within a reasonable time. The optimization that peaked our interest was the use of <a href="https://en.wikipedia.org/wiki/Bitboard">Minimax Algorithm</a>. This concept took us
+            quite some time to wrap our heads around how it would work. Essentially, the whole idea is to represent the game board in binary as opposed to a 6x7 array. There were two bitboards, each representing a player. The reason behind having two bitboards is because bitboards only consist of 1s and 0s, so it would be indiscernible where each player’s moves are if
+            we were to only use a single board. The bitboards allowed us to perform the checks throughout the game space faster, as opposed to using several nested loops to iterate through each row and column. When we originally made our heuristics, we did not fully understand what the values should be to make the agent play better, but as we progressed, we started to test and play with the numbers we had set and found
+            what we feel is the best numbers to make the agent play its best. Unfortunately, changing our current work to use bitboards proved to be quite difficult and we were met with several issues such as our agent no longer making moves that really made sense. We were led believe that this may be an issue within our evaluation function but we were unable to correct this prior to the end of our research. While the version of our work which did 
+            not utilize the bitboard optimization technique was used in our submission, in the future I wish to come back to this project and continue to improve it. I also plan on exploring other games and creating an agent that could play something like Snake.
+        </p>
+
+        <h1>Conclusion</h1>
+        <p>
+            Developing an AI player for Connect 4 was a challenging but rewarding experience. Through the implementation of the minimax algorithm, alpha-beta pruning, and a well-designed evaluation function, we created an intelligent agent capable of playing the game at a high level. Our Connect 4 AI showcased the power of artificial intelligence algorithms in strategic decision-making. This project enhanced our understanding of intelligent systems and allowed us to apply theoretical concepts to a practical problem.
+            In the future, I hope to continue learning more about AI and work on even more projects focusing on the different types of machine learning.
+        </p>
+        
+        <div class="container" style="padding-bottom: 60px">
+            <div class="row">
+                <div class="col text-center">
+                    <a href="index.html#portfolio" class="btn btn-primary">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer section -->
+        <footer id="footer">
+            <div class="text-center">
+                <div class="to-top">
+                    <a class="btn btn-custom" href="#top"><i class="fas fa-angle-up"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+</body>
+</html>

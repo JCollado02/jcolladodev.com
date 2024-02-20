@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeeWise Parking</title>
+
+    <!-- linking font file-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- linking css file -->
+    <link rel="stylesheet" href="projectStyle.css">
+    <link rel="stylesheet" href="buttons.css">
+    <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <style>
+    #image-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 32em; /* Adjust this value as needed */
+    }
+    
+    #image-container img {
+      flex: 1;
+      height: auto;
+    }
+
+    .page-container {
+    display: flex;
+    justify-content: center;
+    }
+    </style>
+</head>
+
+<body>
+
+  <style>
+    h1 {
+        margin-top: 50px; /* Increase the margin top of the h1 tag */
+        margin-bottom: 20px; /* Increase the margin bottom of the h1 tag */
+    }
+  </style>
+
+    <!-- Navigation bar container -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarScroll navbarDark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Jim Collado</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Project Description section -->
+    <div class="custom_container">
+        <h1>BeeWise Parking</h1>
+        <img src="images/portfolioImage4.png" alt="BeeWise Parking App Logo" style="max-width: 800px;"">
+
+        <h1>What We Did</h1>
+        <p> 
+            &emsp;For my Web & Mobile Programming course, I had worked alongside two other students to create our own android app that would utilize a database to store and retrive data. For our project, we had chosen to create an android application that would be utilized by a Parking Steward to submit, view, modify, and delete parking
+            violations for either pre-existing cars already in the database or for cars recently added using the barcode ID scanner tool. The goal of this final project was to demonstrate our ability to apply all of the concepts related to developing android applications that we had gone over throughout the semester. This project really helped learn more about security and how to properly
+            secure a web service. We were also able to learn more about the MVC architecture and how apps communicated with our databases.
+        </p>
+        
+        <!--Development Process section-->
+        <h1>Developing the App</h1>
+        <img src="images/bwScreens.png" alt="BeeWise Parking App Logo">
+        <p> 
+            &emsp; When it came to coming up with the idea that our final project would be centered on, we had the freedom to choose any concept as long as it incorporated a database, provided user account functionality, and allowed for data manipulation such as adding, editing, or removing information. During our brainstorming sessions, the idea of developing an app focused
+            on parking emerged from a conversation we had about our personal experiences with parking at Baldwin Wallace. One of our team members shared an observation about the parking stewards on campus who would issue violations to vehicles, which prompted us to explore the possibility of streamlining this process through a mobile app. We envisioned an easier and more efficient
+            system where violations could be documented and managed through the app, which could then be connected with the school's online platform where students can pay their fines.
+        </p>
+        <p> 
+            &emsp; We had began developing our app in the middle of the semester, and consistently introduced new features and implemented changes on a weekly basis. Throughout our coursework, we acquired valuable knowledge that directly contributed to the evolution of our app. Concepts such as database creation and utilization of recycler views were seamlessly integrated into our project. 
+            The structure of our course facilitated a productive environment where each class session felt like a step forward in building our final product. Collaboration within our group was crucial, as we divided responsibilities and assigned different sections of the app to each team member. Regular meetings were held multiple times per week, allowing us to discuss progress and determine 
+            our next course of action. My specific contributions encompassed the creation of the recycler view, which played a vital role in displaying the reported violations. Additionally, I actively participated in developing the login system and implementing the necessary HTTP methods for seamless communication with our web service. Meanwhile, my teammates were responsible for tasks such 
+            as designing the barcode scanner and managing the databases. This project not only enhanced our proficiency in utilizing Android Studio for app development but also provided hands-on experience with PHP, JSON, and HTTP methods, skills that will undoubtedly prove invaluable for future endeavors. Together, we successfully completed the app to our satisfaction by the end of the semester.
+        </p>
+        
+        <!--Database Explaination section-->
+        <h1>The Database</h1>
+        <div class="container">
+          <img src="images/ListView.png" alt="Image" 
+          style=
+          "width: 100%;
+          max-width: 16em;
+          max-height: auto;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;"
+          >
+        </div>        
+        <p> 
+            &emsp; When developing our app, creating a robust web service and a well-structured database were essential components of our project. Much like the other projects we had in class, we had used a relational database that consisted of multiple tables. One crucial table was dedicated to storing usernames and hashed passwords for our account system. Another table was designed to accommodate car 
+            information and track reported violations. Throughout the project, we utilized a server specifically created for our class and made use of tools such as PHP Storm for developing our web services, along with Postman for thorough testing. Despite having learned the methodologies in class, we encountered notable challenges during the implementation of server components and the 
+            integration of the recycler view components. While these aspects may have been hard to conceptualize at first, we found that with enough time and energy, and with a little trial and error, we were able to figure it out. For example, incorporating our database information into the recycler view at first proved to be difficult. Additionally, we also experienced some difficulty tying the cars
+            table to the violations table and making sure they relate properly.
+        </p>
+
+        <h1>Conclusion</h1>
+        <p>
+            Developing an android app and creating the web services required to get it up and running proved to actually be a fun and challenging learning experience. From coming up with what functionality we wanted the app to have to the design of the each of the pages, this project helped me improve and practice my skills when it came to working with Java, MySQL databases, and with things such as JSON and HTTP requests.
+            This was a great way to put what I learned in this course to use and I hope to eventually develop more android applications in the near future!
+        </p>
+        
+        <div class="container1" style="padding-bottom: 60px">
+            <div class="row">
+                <div class="col text-center">
+                    <a href="index.html#portfolio" class="btn btn-primary">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer section -->
+        <footer id="footer">
+            <div class="text-center">
+                <div class="to-top">
+                    <a class="btn btn-custom" href="#top"><i class="fas fa-angle-up"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+</body>
+</html>
